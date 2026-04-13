@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs and runtime
+logs/
+*.log
+.mongo-data/
+.mongo-logs/
+.mongo/
+.mongodb/
+
+# Coverage
+coverage/
+.nyc_output/

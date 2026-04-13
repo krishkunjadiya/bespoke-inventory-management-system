@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invoice Details | Bespoke Inventory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d9dadc",
+                        "tertiary-container": "#747474",
+                        "surface-tint": "#575e70",
+                        "on-primary": "#dce2f7",
+                        "on-background": "#191c1e",
+                        "surface-container-high": "#e7e8ea",
+                        "tertiary-fixed-dim": "#474747",
+                        "on-tertiary-fixed-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f4f6",
+                        "secondary-fixed-dim": "#ababab",
+                        "primary-fixed": "#575e70",
+                        "on-secondary-fixed-variant": "#3b3b3b",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "on-primary-fixed-variant": "#dce2f7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeef0",
+                        "on-secondary-container": "#1b1b1b",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#c6c6c6",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-surface-variant": "#474747",
+                        "on-primary-fixed": "#ffffff",
+                        "outline": "#777777",
+                        "surface": "#f8f9fb",
+                        "surface-variant": "#e1e2e4",
+                        "on-surface": "#191c1e",
+                        "secondary": "#5e5e5e",
+                        "on-error-container": "#410002",
+                        "tertiary": "#3b3b3b",
+                        "on-tertiary-container": "#ffffff",
+                        "on-tertiary-fixed": "#ffffff",
+                        "outline-variant": "#c6c6c6",
+                        "tertiary-fixed": "#5e5e5e",
+                        "primary": "#000000",
+                        "primary-fixed-dim": "#404758",
+                        "on-primary-container": "#ffffff",
+                        "inverse-primary": "#c0c6db",
+                        "primary-container": "#343b4c",
+                        "secondary-container": "#d4d4d4",
+                        "on-tertiary": "#e2e2e2",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-highest": "#e1e2e4",
+                        "inverse-surface": "#2e3132",
+                        "background": "#f8f9fb",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fb; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .ghost-border { border: 1.75px solid rgba(198, 198, 198, 0.2); }
+        .invoice-canvas { border: 1px solid rgba(198, 198, 198, 0.1); }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex h-screen w-64 fixed left-0 top-0 flex-col py-8 px-4 border-r border-neutral-200/20 bg-neutral-50 dark:bg-neutral-950 z-50">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-black text-neutral-900 dark:text-white uppercase tracking-widest font-headline">Inventory Pro</h1>
+<p class="text-[10px] text-neutral-500 font-medium tracking-[0.2em] mt-1">PREMIUM LEDGER</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 px-4 py-2 font-headline text-sm font-medium transition-all" href="Inventory_Dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 px-4 py-2 font-headline text-sm font-medium transition-all" href="Products_List.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<!-- Active State: Sales History -->
+<a class="flex items-center space-x-3 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 rounded-full px-4 py-2 shadow-lg font-headline text-sm font-medium transition-all" href="Sales_History.html">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Sales History</span>
+</a>
+<a class="flex items-center space-x-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 px-4 py-2 font-headline text-sm font-medium transition-all" href="Purchase_Orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Purchase Orders</span>
+</a>
+<a class="flex items-center space-x-3 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 px-4 py-2 font-headline text-sm font-medium transition-all" href="Settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4 px-4">
+<button class="w-full bg-primary text-on-primary-container rounded-full py-3 font-headline text-sm font-bold shadow-xl flex items-center justify-center space-x-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>New Entry</span>
+</button>
+<div class="pt-6 border-t border-neutral-200/20">
+<a class="flex items-center space-x-3 text-neutral-500 py-2 text-sm font-medium font-headline" href="Inventory-Management-System-Node-Express-MongoDB-Guide.md">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center space-x-3 text-neutral-500 py-2 text-sm font-medium font-headline" href="Login.html">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-0 lg:ml-64 min-h-screen">
+<!-- Top Bar -->
+<header class="w-full sticky top-0 z-40 bg-white dark:bg-neutral-900 border-b border-neutral-200/20 flex items-center justify-between px-4 lg:px-8 h-16">
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2 font-headline text-sm tracking-tight font-semibold">
+<span class="text-neutral-400">Sales</span>
+<span class="material-symbols-outlined text-xs text-neutral-300" data-icon="chevron_right">chevron_right</span>
+<span class="text-neutral-400">Sales History</span>
+<span class="material-symbols-outlined text-xs text-neutral-300" data-icon="chevron_right">chevron_right</span>
+<span class="text-neutral-900 dark:text-neutral-50 font-bold">INV-1087</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center space-x-2 px-4 py-2 rounded-full border border-outline-variant/30 text-sm font-headline font-semibold text-neutral-700 hover:bg-neutral-50 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+<span>Download PDF</span>
+</button>
+<button class="flex items-center space-x-2 px-6 py-2 rounded-full bg-primary text-white text-sm font-headline font-semibold shadow-md hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="print">print</span>
+<span>Print</span>
+</button>
+<div class="h-6 w-[1px] bg-neutral-200 mx-2"></div>
+<button class="p-2 text-neutral-500 hover:bg-neutral-100 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-neutral-200 overflow-hidden ml-2">
+<img alt="Aarav Sharma" data-alt="professional male profile portrait with warm neutral background soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAvuMxNuOSlU3ungTXyUmr_ieM7LEL7ALTYqf5aGchedTnIzzq56Rm1x0zopEkTg4NBC6cG4Pe6K1m80ZOsGCAKVflr5Ymoba1tTT4FRFgoL8Gd02xfrtPuzZlc5QA21gnRdgWJqpVN4Z7iqV4Uj5RvZRzRDb7s2CmwZtTLfA9lXRbwkIkTEsZUIK--YiWS_K2x3j9DxCAOMC60BjM3pbsKidKibrhfdPDUS89DJEhk_-ziBRPjlW4qd89UpRR1wFrOkJlPFZ1IVkY"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-4 sm:p-6 lg:p-8 max-w-[1440px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- LEFT COLUMN: Physical Invoice View -->
+<div class="w-full lg:w-[68%]">
+<div class="bg-surface-container-lowest rounded-DEFAULT ghost-border overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] invoice-canvas">
+<div class="p-12">
+<!-- Invoice Header -->
+<div class="flex justify-between items-start mb-16">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h2 class="font-headline text-xl font-extrabold tracking-tight text-primary">Sharma General Store</h2>
+<p class="text-xs text-secondary mt-1 max-w-[200px] leading-relaxed font-medium">
+                                            23, MG Road, Near City Mall, Bengaluru - 560001<br/>
+                                            Phone: +91 98765 43210<br/>
+<span class="text-primary/60">GSTIN: 29ABCDE1234F1Z5</span>
+</p>
+</div>
+</div>
+<div class="text-right">
+<h1 class="font-headline text-5xl font-black text-neutral-200 uppercase tracking-tighter opacity-50">INVOICE</h1>
+<div class="mt-4 flex flex-col space-y-1 font-headline">
+<div class="flex justify-end space-x-4 text-sm">
+<span class="text-secondary">Invoice #:</span>
+<span class="font-bold text-primary">INV-1087</span>
+</div>
+<div class="flex justify-end space-x-4 text-sm">
+<span class="text-secondary">Date:</span>
+<span class="font-bold">April 5, 2025</span>
+</div>
+<div class="flex justify-end space-x-4 text-sm">
+<span class="text-secondary">Status:</span>
+<span class="font-bold text-emerald-600 flex items-center">Paid <span class="material-symbols-outlined text-xs ml-1" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bill To Section -->
+<div class="grid grid-cols-2 gap-12 mb-12 py-8 border-y border-neutral-100/50">
+<div>
+<h3 class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-3">Bill To</h3>
+<p class="font-headline font-bold text-lg">Ramesh Kumar</p>
+<p class="text-sm text-secondary mt-1">+91 98765 43210</p>
+</div>
+<div>
+<h3 class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-3">Payment Method</h3>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-sm font-semibold font-headline">UPI (PhonePe)</span>
+</div>
+<p class="text-[10px] text-secondary mt-1">Transaction ID: 5543901238994</p>
+</div>
+</div>
+<!-- Items Table -->
+<table class="w-full mb-12">
+<thead>
+<tr class="text-left border-b border-neutral-100 font-headline text-[10px] font-bold text-neutral-400 uppercase tracking-widest">
+<th class="pb-4 w-8">#</th>
+<th class="pb-4">Product Details</th>
+<th class="pb-4">SKU</th>
+<th class="pb-4 text-center">Qty</th>
+<th class="pb-4 text-right">Rate</th>
+<th class="pb-4 text-right">Tax (18%)</th>
+<th class="pb-4 text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="text-sm font-medium">
+<tr class="border-b border-neutral-50">
+<td class="py-6 text-secondary">1</td>
+<td class="py-6">
+<span class="font-bold block text-primary">Premium Rice Basmati</span>
+<span class="text-[11px] text-secondary">Aged Long Grain • 5kg Pack</span>
+</td>
+<td class="py-6 font-mono text-[12px] text-neutral-400">PRB-001</td>
+<td class="py-6 text-center">2</td>
+<td class="py-6 text-right">₹75.00</td>
+<td class="py-6 text-right text-secondary">₹13.50</td>
+<td class="py-6 text-right font-bold text-primary">₹163.50</td>
+</tr>
+<tr class="border-b border-neutral-50">
+<td class="py-6 text-secondary">2</td>
+<td class="py-6">
+<span class="font-bold block text-primary">Amul Butter 500g</span>
+<span class="text-[11px] text-secondary">Pasteurized Salted</span>
+</td>
+<td class="py-6 font-mono text-[12px] text-neutral-400">ABU-004</td>
+<td class="py-6 text-center">1</td>
+<td class="py-6 text-right">₹265.00</td>
+<td class="py-6 text-right text-secondary">₹47.70</td>
+<td class="py-6 text-right font-bold text-primary">₹312.70</td>
+</tr>
+<tr class="border-b border-neutral-50">
+<td class="py-6 text-secondary">3</td>
+<td class="py-6">
+<span class="font-bold block text-primary">Maggi Noodles</span>
+<span class="text-[11px] text-secondary">Masala Family Pack</span>
+</td>
+<td class="py-6 font-mono text-[12px] text-neutral-400">MGN-008</td>
+<td class="py-6 text-center">3</td>
+<td class="py-6 text-right">₹20.00</td>
+<td class="py-6 text-right text-secondary">₹3.60</td>
+<td class="py-6 text-right font-bold text-primary">₹63.60</td>
+</tr>
+<tr class="border-b border-neutral-100">
+<td class="py-6 text-secondary">4</td>
+<td class="py-6">
+<span class="font-bold block text-primary">Colgate Toothpaste</span>
+<span class="text-[11px] text-secondary">Strong Teeth • 150g</span>
+</td>
+<td class="py-6 font-mono text-[12px] text-neutral-400">CTH-006</td>
+<td class="py-6 text-center">1</td>
+<td class="py-6 text-right">₹95.00</td>
+<td class="py-6 text-right text-secondary">₹17.10</td>
+<td class="py-6 text-right font-bold text-primary">₹112.10</td>
+</tr>
+</tbody>
+</table>
+<!-- Totals Section -->
+<div class="flex justify-end">
+<div class="w-72 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-secondary font-medium">Subtotal</span>
+<span class="font-bold">₹455.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-secondary font-medium">GST (18%)</span>
+<span class="font-bold">₹81.90</span>
+</div>
+<div class="flex justify-between text-sm text-error">
+<span class="font-medium">Discount (Promo)</span>
+<span class="font-bold">-₹25.00</span>
+</div>
+<div class="pt-4 border-t border-neutral-200">
+<div class="flex justify-between items-baseline">
+<span class="font-headline font-extrabold text-lg">Total</span>
+<span class="font-headline font-black text-3xl tracking-tighter">₹511.90</span>
+</div>
+</div>
+<div class="pt-2 flex flex-col space-y-1">
+<div class="flex justify-between text-[11px] font-bold text-emerald-600">
+<span>AMOUNT PAID</span>
+<span>₹511.90</span>
+</div>
+<div class="flex justify-between text-[11px] font-bold text-secondary">
+<span>CHANGE</span>
+<span>₹0.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Invoice Footer -->
+<div class="mt-20 text-center border-t border-neutral-100 pt-8">
+<p class="text-sm font-headline font-bold text-primary">Thank you for your purchase!</p>
+<p class="text-[11px] text-secondary mt-1">Returns accepted within 3 days of purchase with original receipt.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Actions Panel -->
+<div class="w-full lg:w-[32%] space-y-6">
+<!-- Metadata Card -->
+<div class="bg-surface-container-lowest rounded-DEFAULT ghost-border p-6 shadow-sm">
+<div class="flex justify-between items-start mb-6">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">PAID</span>
+<button class="text-neutral-400 hover:text-neutral-900 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="space-y-4 font-headline mb-6">
+<div class="flex justify-between">
+<span class="text-sm text-secondary font-medium">Invoice Number</span>
+<span class="text-sm font-bold">INV-1087</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-secondary font-medium">Date &amp; Time</span>
+<span class="text-sm font-bold">Apr 05, 14:23</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-secondary font-medium">Cashier</span>
+<span class="text-sm font-bold">Aarav Sharma</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm text-secondary font-medium">Terminal</span>
+<span class="text-sm font-bold">Main Registry 01</span>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full bg-primary text-white py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center space-x-2 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="print">print</span>
+<span>Print Receipt</span>
+</button>
+<button class="w-full border border-outline-variant text-primary py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center space-x-2 hover:bg-neutral-50 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span>Download PDF</span>
+</button>
+<button class="w-full border border-outline-variant text-primary py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center space-x-2 hover:bg-neutral-50 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg text-emerald-600" data-icon="send">send</span>
+<span>Share via WhatsApp</span>
+</button>
+<button class="w-full border border-outline-variant text-primary py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center space-x-2 hover:bg-neutral-50 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+<span>Send Email</span>
+</button>
+</div>
+</div>
+<!-- Actions / Danger Zone -->
+<div class="bg-surface-container-lowest rounded-DEFAULT ghost-border p-6 shadow-sm">
+<h4 class="font-headline font-bold text-sm mb-4">Operations</h4>
+<div class="space-y-4">
+<button class="w-full border border-error/30 text-error py-3 rounded-full font-headline font-bold text-sm flex items-center justify-center space-x-2 hover:bg-error/5 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="undo">undo</span>
+<span>Issue Refund</span>
+</button>
+<div class="pt-4 border-t border-neutral-100">
+<button class="text-error text-sm font-bold flex items-center space-x-1 hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+<span>Void Invoice</span>
+</button>
+<p class="text-[10px] text-secondary mt-1 font-medium leading-relaxed">
+                                    This will reverse the sale, restore inventory counts, and mark the transaction as canceled. This action cannot be undone.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Audit Trail -->
+<div class="px-2">
+<h4 class="font-headline font-bold text-[10px] uppercase tracking-widest text-neutral-400 mb-3">Audit Trail</h4>
+<div class="space-y-3 relative before:content-[''] before:absolute before:left-1 before:top-2 before:bottom-2 before:w-[1px] before:bg-neutral-200">
+<div class="pl-6 relative">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-neutral-300"></div>
+<p class="text-[11px] font-bold">Created by Aarav Sharma</p>
+<p class="text-[10px] text-neutral-400">Apr 05, 2025 • 14:23</p>
+</div>
+<div class="pl-6 relative">
+<div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-neutral-300"></div>
+<p class="text-[11px] font-bold">Printed once</p>
+<p class="text-[10px] text-neutral-400">Apr 05, 2025 • 14:24</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+    <script src="static-actions.js"></script>
+</body></html>

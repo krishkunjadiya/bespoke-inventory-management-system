@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bespoke Inventory | Customers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#ffffff",
+                        "on-tertiary-fixed": "#ffffff",
+                        "surface": "#f8f9fb",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ababab",
+                        "secondary": "#5e5e5e",
+                        "background": "#f8f9fb",
+                        "surface-dim": "#d9dadc",
+                        "on-primary-fixed-variant": "#dce2f7",
+                        "on-secondary-fixed-variant": "#3b3b3b",
+                        "on-tertiary-container": "#ffffff",
+                        "tertiary-fixed": "#5e5e5e",
+                        "primary-fixed-dim": "#404758",
+                        "inverse-on-surface": "#f0f1f3",
+                        "tertiary": "#3b3b3b",
+                        "surface-variant": "#e1e2e4",
+                        "on-surface-variant": "#474747",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "surface-container": "#edeef0",
+                        "on-secondary-container": "#1b1b1b",
+                        "tertiary-fixed-dim": "#474747",
+                        "error": "#ba1a1a",
+                        "primary-container": "#343b4c",
+                        "inverse-primary": "#c0c6db",
+                        "on-surface": "#191c1e",
+                        "tertiary-container": "#747474",
+                        "outline": "#777777",
+                        "surface-container-high": "#e7e8ea",
+                        "outline-variant": "#c6c6c6",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-tertiary-fixed-variant": "#e2e2e2",
+                        "surface-tint": "#575e70",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#d4d4d4",
+                        "error-container": "#ffdad6",
+                        "primary": "#000000",
+                        "primary-fixed": "#575e70",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f6",
+                        "on-primary": "#dce2f7",
+                        "on-tertiary": "#e2e2e2",
+                        "secondary-fixed": "#c6c6c6",
+                        "on-error-container": "#410002",
+                        "surface-bright": "#f8f9fb",
+                        "on-primary-container": "#ffffff",
+                        "inverse-surface": "#2e3132"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar (Execution from JSON) -->
+<aside class="hidden lg:flex h-screen w-64 fixed left-0 top-0 bg-[#f3f4f6] dark:bg-gray-900 flex-col p-6 border-r border-gray-200/20 dark:border-gray-800/20 font-manrope text-sm uppercase tracking-widest">
+<div class="mb-10">
+<span class="font-black text-xl text-gray-900 dark:text-gray-100">Curated Ledger</span>
+<p class="text-[10px] tracking-widest text-gray-500 mt-1 uppercase">Premium Management</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-gray-500 dark:text-gray-400 px-4 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all duration-200 ease-in-out" href="Inventory_Dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-4 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all duration-200 ease-in-out" href="Products_List.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Inventory
+            </a>
+<!-- Active State: Sales (Parent context) -->
+<a class="bg-black dark:bg-white text-white dark:text-black rounded-full px-4 py-2 flex items-center gap-3 duration-200 ease-in-out" href="Sales_History.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span> Sales
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-4 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all duration-200 ease-in-out" href="Purchase_Orders.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span> Procurement
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-4 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all duration-200 ease-in-out" href="Business_Reports.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span> Analytics
+            </a>
+</nav>
+<div class="mt-auto space-y-2 pt-6 border-t border-gray-200/20">
+<button class="w-full bg-primary text-white py-3 rounded-full font-bold mb-4 hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span> New Entry
+            </button>
+<a class="text-gray-500 dark:text-gray-400 px-4 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all duration-200 ease-in-out" href="Settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-4 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all duration-200 ease-in-out" href="Inventory-Management-System-Node-Express-MongoDB-Guide.md">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> Support
+            </a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="ml-0 lg:ml-64 flex-1 flex">
+<!-- Content Canvas -->
+<div class="flex-1 min-w-0">
+<!-- TopNavBar (Execution from JSON) -->
+<header class="w-full sticky top-0 z-40 bg-[#f8f9fb] dark:bg-gray-950 flex items-center justify-between px-4 lg:px-8 py-4 w-full font-manrope text-sm font-medium tracking-tight border-b border-gray-200/10">
+<div class="flex items-center gap-4">
+<span class="text-gray-500">Sales</span>
+<span class="text-gray-400 material-symbols-outlined !text-xs">chevron_right</span>
+<span class="text-gray-900 dark:text-white font-bold">Customers</span>
+</div>
+<div class="flex items-center gap-3 sm:gap-6">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400 !text-lg">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-black w-36 sm:w-48" placeholder="Search customers..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-5 py-2 rounded-full hover:opacity-90 transition-all active:scale-95">Add Customer</button>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer hover:text-black">notifications</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer hover:text-black">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200">
+<img alt="Portrait of a modern professional with short beard and stylish glasses against a neutral grey studio background" class="w-full h-full object-cover" data-alt="Portrait of a modern professional with short beard and stylish glasses against a neutral grey studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyjWanwGOSp0kiocx6L_Sxekz_64cglG442MslVNYlDboV1w5tCJKEBAntuQXBvJhSTAPDpVnTchGU53n8mrLXR5-t7qBfRMrJBOR3yZTKEzMVdcBPNNwyw-J427s-thCa0HdYzySmhbV-l5tprRk1KtnmiKJ3VYJS2XTsAuQqyq28XZ8KsOF3TDtvZltt05Ui_QOOyNE4gLL9B2_RI2GPD-p6jaGtNQswsKus90uAAjUlDFfkCiH6acuBX40uBEK5-g7oK_gmdGNV"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-4 sm:p-6 lg:p-8">
+<!-- Page Header -->
+<div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-end mb-8">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tighter text-black mb-2">Customers</h1>
+<p class="text-gray-500 font-body">Manage your customer database and purchase history.</p>
+</div>
+<div class="flex gap-3">
+<button class="border-[1.75px] border-outline text-black px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined !text-lg">download</span> Export
+                        </button>
+<button class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined !text-lg">person_add</span> Add Customer
+                        </button>
+</div>
+</div>
+<!-- Toolbar -->
+<div class="flex flex-wrap gap-4 mb-8 items-center">
+<div class="relative flex-1 max-w-md">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-gray-400">search</span>
+<input class="w-full bg-white border-none border-b-[1.75px] border-outline-variant focus:border-black transition-colors pl-12 py-3 rounded-none bg-transparent" placeholder="Search customer name, phone, or email..." type="text"/>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-full border border-outline-variant/20">
+<button class="px-6 py-2 rounded-full bg-black text-white font-medium text-sm">All Customers</button>
+<button class="px-6 py-2 rounded-full text-gray-500 font-medium text-sm hover:text-black">Active</button>
+<button class="px-6 py-2 rounded-full text-gray-500 font-medium text-sm hover:text-black">Inactive</button>
+</div>
+</div>
+<!-- Customer Table Card -->
+<div class="bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/20 overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 text-gray-500 text-xs font-bold uppercase tracking-widest border-b border-outline-variant/10">
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4">Phone</th>
+<th class="px-6 py-4 text-center">Orders</th>
+<th class="px-6 py-4">Total Spent</th>
+<th class="px-6 py-4">Last Purchase</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 w-12"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Ramesh Kumar (Selected) -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer bg-surface-container-low/30">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">RK</div>
+<div>
+<div class="text-black font-bold text-sm">Ramesh Kumar</div>
+<div class="text-gray-400 text-xs">ramesh@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-gray-600 font-medium">+91 98765 43210</td>
+<td class="px-6 py-6 text-sm text-center font-bold">48</td>
+<td class="px-6 py-6 text-sm font-extrabold">₹24,500</td>
+<td class="px-6 py-6 text-sm text-gray-500">Apr 05, 2025</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-secondary-container/30 text-black text-[10px] font-bold rounded-full uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-6">
+<span class="material-symbols-outlined text-gray-400">more_vert</span>
+</td>
+</tr>
+<!-- Priya Sharma -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-sm text-gray-500">PS</div>
+<div>
+<div class="text-black font-bold text-sm">Priya Sharma</div>
+<div class="text-gray-400 text-xs">priya@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-gray-600 font-medium">+91 87654 32109</td>
+<td class="px-6 py-6 text-sm text-center font-bold">35</td>
+<td class="px-6 py-6 text-sm font-extrabold">₹18,200</td>
+<td class="px-6 py-6 text-sm text-gray-500">Apr 04, 2025</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-secondary-container/30 text-black text-[10px] font-bold rounded-full uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-6">
+<span class="material-symbols-outlined text-gray-400">more_vert</span>
+</td>
+</tr>
+<!-- Suresh Mehta -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-sm text-gray-500">SM</div>
+<div>
+<div class="text-black font-bold text-sm">Suresh Mehta</div>
+<div class="text-gray-400 text-xs">—</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-gray-600 font-medium">+91 76543 21098</td>
+<td class="px-6 py-6 text-sm text-center font-bold">12</td>
+<td class="px-6 py-6 text-sm font-extrabold">₹5,800</td>
+<td class="px-6 py-6 text-sm text-gray-500">Mar 28, 2025</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-secondary-container/30 text-black text-[10px] font-bold rounded-full uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-6">
+<span class="material-symbols-outlined text-gray-400">more_vert</span>
+</td>
+</tr>
+<!-- Anita Reddy -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-sm text-gray-500">AR</div>
+<div>
+<div class="text-black font-bold text-sm">Anita Reddy</div>
+<div class="text-gray-400 text-xs">anita@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-gray-600 font-medium">+91 65432 10987</td>
+<td class="px-6 py-6 text-sm text-center font-bold">67</td>
+<td class="px-6 py-6 text-sm font-extrabold">₹41,300</td>
+<td class="px-6 py-6 text-sm text-gray-500">Apr 05, 2025</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-secondary-container/30 text-black text-[10px] font-bold rounded-full uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-6">
+<span class="material-symbols-outlined text-gray-400">more_vert</span>
+</td>
+</tr>
+<!-- Kiran Patel -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-bold text-sm text-gray-500">KP</div>
+<div>
+<div class="text-black font-bold text-sm">Kiran Patel</div>
+<div class="text-gray-400 text-xs">kiran@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-gray-600 font-medium">+91 54321 09876</td>
+<td class="px-6 py-6 text-sm text-center font-bold">8</td>
+<td class="px-6 py-6 text-sm font-extrabold">₹3,200</td>
+<td class="px-6 py-6 text-sm text-gray-500">Mar 15, 2025</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-error-container/40 text-error text-[10px] font-bold rounded-full uppercase tracking-tighter">Inactive</span>
+</td>
+<td class="px-6 py-6">
+<span class="material-symbols-outlined text-gray-400">more_vert</span>
+</td>
+</tr>
+<!-- Walk-in Customer -->
+<tr class="hover:bg-surface-container-high transition-colors cursor-pointer">
+<td class="px-6 py-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-sm text-gray-500">WC</div>
+<div>
+<div class="text-black font-bold text-sm">Walk-in Customer</div>
+<div class="text-gray-400 text-xs">—</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-6 text-sm text-gray-600 font-medium">—</td>
+<td class="px-6 py-6 text-sm text-center font-bold">156</td>
+<td class="px-6 py-6 text-sm font-extrabold">₹62,400</td>
+<td class="px-6 py-6 text-sm text-gray-500">Apr 05, 2025</td>
+<td class="px-6 py-6">
+<span class="px-3 py-1 bg-secondary-container/30 text-black text-[10px] font-bold rounded-full uppercase tracking-tighter">Active</span>
+</td>
+<td class="px-6 py-6">
+<span class="material-symbols-outlined text-gray-400">more_vert</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Detail Side Panel (Ramesh Kumar) -->
+<aside class="w-[420px] bg-white h-screen sticky top-0 border-l border-outline-variant/10 flex flex-col shadow-2xl shadow-black/5">
+<div class="p-8 flex-1 overflow-y-auto">
+<div class="flex justify-between items-start mb-10">
+<div class="flex-1 text-center">
+<div class="w-24 h-24 rounded-full bg-black mx-auto mb-6 flex items-center justify-center text-white font-black text-3xl">RK</div>
+<h2 class="text-2xl font-extrabold text-black tracking-tight">Ramesh Kumar</h2>
+<p class="text-gray-400 text-sm mb-6">ramesh@email.com</p>
+<div class="flex justify-center gap-2">
+<button class="bg-black text-white px-6 py-2 rounded-full text-sm font-bold active:scale-95 transition-all">Edit Profile</button>
+<button class="border border-outline text-black w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined !text-lg">mail</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-3 gap-4 mb-10">
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Spent</p>
+<p class="font-extrabold text-black">₹24.5k</p>
+</div>
+<div class="text-center border-x border-outline-variant/10 px-4">
+<p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Orders</p>
+<p class="font-extrabold text-black">48</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Avg Ticket</p>
+<p class="font-extrabold text-black">₹510</p>
+</div>
+</div>
+<!-- Transactions -->
+<div class="mb-10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-sm font-black uppercase tracking-widest text-black">Recent Transactions</h3>
+<a class="text-xs font-bold text-gray-400 hover:text-black" href="Customers_Management.html">View All</a>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-DEFAULT border border-transparent hover:border-outline-variant/30 transition-all">
+<div>
+<p class="text-xs font-bold text-black">INV #9042</p>
+<p class="text-[10px] text-gray-500">Apr 05, 2025</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black text-black">₹1,250</p>
+<span class="text-[8px] uppercase tracking-tighter font-black text-secondary">Paid</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-DEFAULT border border-transparent hover:border-outline-variant/30 transition-all">
+<div>
+<p class="text-xs font-bold text-black">INV #8821</p>
+<p class="text-[10px] text-gray-500">Mar 22, 2025</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black text-black">₹4,800</p>
+<span class="text-[8px] uppercase tracking-tighter font-black text-secondary">Paid</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-DEFAULT border border-transparent hover:border-outline-variant/30 transition-all">
+<div>
+<p class="text-xs font-bold text-black">INV #8710</p>
+<p class="text-[10px] text-gray-500">Mar 15, 2025</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black text-black">₹850</p>
+<span class="text-[8px] uppercase tracking-tighter font-black text-secondary">Paid</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Notes -->
+<div class="bg-surface-container-low p-6 rounded-DEFAULT border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2">
+<span class="material-symbols-outlined !text-xs text-gray-300">sticky_note_2</span>
+</div>
+<h3 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Internal Notes</h3>
+<p class="text-xs text-black leading-relaxed italic font-medium">
+                        "Regular customer. Prefers UPI payment for all warehouse pickups. High priority for new inventory alerts."
+                    </p>
+</div>
+</div>
+<div class="p-8 border-t border-outline-variant/10 bg-surface-container-low/30">
+<button class="w-full bg-black text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined !text-lg">visibility</span> View All Sales History
+                </button>
+</div>
+</aside>
+</main>
+    <script src="static-actions.js"></script>
+</body></html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bespoke POS | The Curated Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#ffffff",
+                        "primary-fixed-dim": "#404758",
+                        "surface-variant": "#e1e2e4",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3b3b3b",
+                        "on-background": "#191c1e",
+                        "outline-variant": "#c6c6c6",
+                        "inverse-primary": "#c0c6db",
+                        "surface-container-high": "#e7e8ea",
+                        "primary-fixed": "#575e70",
+                        "on-surface-variant": "#474747",
+                        "secondary-fixed": "#c6c6c6",
+                        "on-error-container": "#410002",
+                        "error": "#ba1a1a",
+                        "tertiary": "#3b3b3b",
+                        "secondary": "#5e5e5e",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e1e2e4",
+                        "surface-container-low": "#f3f4f6",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "secondary-fixed-dim": "#ababab",
+                        "on-tertiary": "#e2e2e2",
+                        "surface": "#f8f9fb",
+                        "secondary-container": "#d4d4d4",
+                        "outline": "#777777",
+                        "on-surface": "#191c1e",
+                        "background": "#f8f9fb",
+                        "on-primary-fixed-variant": "#dce2f7",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#575e70",
+                        "primary": "#000000",
+                        "surface-dim": "#d9dadc",
+                        "on-secondary-container": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#e2e2e2",
+                        "inverse-on-surface": "#f0f1f3",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-container": "#ffffff",
+                        "tertiary-fixed": "#5e5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#474747",
+                        "on-tertiary-container": "#ffffff",
+                        "tertiary-container": "#747474",
+                        "surface-container": "#edeef0",
+                        "surface-bright": "#f8f9fb",
+                        "on-primary": "#dce2f7",
+                        "primary-container": "#343b4c",
+                        "on-primary-fixed": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'olsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fb; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .ghost-border { border: 1px solid rgba(198, 198, 198, 0.2); }
+        .no-scrollbar::-webkit-scrollbar { disllay: none; }
+    </style>
+</head>
+<body class="text-on-background bg-surface min-h-screen overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="hidden lg:flex h-screen w-72 fixed left-0 top-0 z-40 bg-slate-100 dark:bg-slate-900 border-r border-gray-200/20 flex-col py-10 px-6 font-['Manrope'] font-bold tracking-tight">
+<div class="mb-12">
+<span class="text-2xl font-black text-gray-950 dark:text-white uppercase tracking-widest">Bespoke</span>
+<p class="text-[10px] text-gray-400 mt-1 uppercase tracking-[0.2em] font-medium">The Curated Ledger</p>
+</div>
+<nav class="flex-1 space-y-4">
+<a class="text-gray-500 dark:text-gray-400 px-6 py-3 font-medium flex items-center gap-4 hover:text-gray-950 dark:hover:text-gray-50 transition-all duration-300" href="Inventory_Dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-6 py-3 font-medium flex items-center gap-4 hover:text-gray-950 dark:hover:text-gray-50 transition-all duration-300" href="Products_List.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                Inventory
+            </a>
+<a class="bg-gray-950 text-white dark:bg-white dark:text-gray-950 rounded-full px-6 py-3 shadow-lg flex items-center gap-4 scale-[0.98] transition-transform" href="POS_Interface.html">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                Sales
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-6 py-3 font-medium flex items-center gap-4 hover:text-gray-950 dark:hover:text-gray-50 transition-all duration-300" href="Business_Reports.html">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+                Analytics
+            </a>
+<a class="text-gray-500 dark:text-gray-400 px-6 py-3 font-medium flex items-center gap-4 hover:text-gray-950 dark:hover:text-gray-50 transition-all duration-300" href="Settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<button class="mt-auto bg-primary-container text-white py-4 px-6 rounded-full flex items-center justify-center gap-3 hover:opacity-90 transition-all shadow-xl">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span>Quick Scan</span>
+</button>
+</aside>
+<!-- TopAllBar Shell -->
+<header class="fixed top-0 right-0 left-0 lg:left-72 w-full lg:w-[calc(100%-18rem)] z-30 bg-[#f8f9fb]/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-gray-200/20 flex justify-between items-center h-20 px-4 lg:px-10 font-['Inter'] text-sm font-semibold tracking-wide">
+<div class="flex items-center gap-4 lg:gap-8">
+<span class="text-lg font-bold text-gray-950 dark:text-white">Sales &gt; POS</span>
+<div class="hidden md:block relative w-72 lg:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full bg-transparent border-b-[1.75px] border-outline-variant py-2 pl-10 focus:border-primary focus:ring-0 outline-none transition-all placeholder:text-gray-400 font-normal" placeholder="Scan barcode or search by product name/SKU..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-500 hover:opacity-70 transition-opacity" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-gray-500 hover:opacity-70 transition-opacity" data-icon="history">history</button>
+</div>
+<div class="h-8 w-[1px] bg-gray-200/20"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold leading-none">Store Manager</p>
+<p class="text-[10px] text-gray-500 uppercase tracking-tighter">Terminal 04</p>
+</div>
+<img alt="Portrait of a professional store manager in a minimalist white studio setting with soft lighting" class="w-10 h-10 rounded-full object-cover ghost-border" data-alt="Portrait of a professional store manager in a minimalist white studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGUyjnhHuVSe4f6lUBlVSJvsFLJt-v6enRq7CYsg_vIrFDTImZdoAaTmFfKSvqPlqKkIsN8DN2T1e5DMWbYJcOEam8O5l4dJeA0NZEOwGIOSWulhChF0Jd0MTVBdxMCks8c0lWr1TUR6b2ZTaNC_BxwvXlhLz2wXgI5OAqZKj0PMOwvSRnQCHxUeMRog3QyNYfjkn3RRTNXiFGiFlM1in7BR81vH7VI2lUofzLchEgroTKNJbhBD9Q_vIuBk4GNVLNU3wNr1Sl6Q37"/>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="ml-0 lg:ml-72 pt-20 flex flex-col lg:flex-row h-screen overflow-hidden">
+<!-- Left Panel: Product Selection (70%) -->
+<section class="w-full lg:w-[70%] h-full overflow-y-auto no-scrollbar px-4 sm:px-6 lg:px-10 py-8 space-y-8 pb-32">
+<!-- Category Pills -->
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar">
+<button class="bg-primary text-white px-6 py-2 rounded-full font-semibold text-sm whitespace-nowrap shadow-md">All</button>
+<button class="bg-surface-container-low text-secondary px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Grains</button>
+<button class="bg-surface-container-low text-secondary px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Oils</button>
+<button class="bg-surface-container-low text-secondary px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Dairy</button>
+<button class="bg-surface-container-low text-secondary px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Snacks</button>
+<button class="bg-surface-container-low text-secondary px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Essentials</button>
+<button class="bg-surface-container-low text-secondary px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap hover:bg-surface-container-high transition-colors">Cleaning</button>
+<button class="text-primary font-bold text-sm px-4">+ More</button>
+</div>
+<!-- Product Grid (Asymmetric Layout Feel) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">GRAIN-001</span>
+<span class="bg-secondary-container/30 text-secondary text-[10px] font-bold px-2 py-0.5 rounded">240 IN STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Premium Rice</h3>
+<p class="text-sm text-gray-500 font-medium">Basmati Long Grain</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹75</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 (Low Stock) -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">OIL-42</span>
+<span class="bg-error-container text-error text-[10px] font-bold px-2 py-0.5 rounded">LOW: 8 LEFT</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Sunflower Oil</h3>
+<p class="text-sm text-gray-500 font-medium">Refined Pure</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹128</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">DAIRY-99</span>
+<span class="bg-secondary-container/30 text-secondary text-[10px] font-bold px-2 py-0.5 rounded">45 IN STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Amul Butter</h3>
+<p class="text-sm text-gray-500 font-medium">Salted 500g</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹265</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">SNACK-05</span>
+<span class="bg-secondary-container/30 text-secondary text-[10px] font-bold px-2 py-0.5 rounded">180 IN STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Parle-G</h3>
+<p class="text-sm text-gray-500 font-medium">Original Gluco</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹10</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 5 (Low Stock) -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">ESSN-211</span>
+<span class="bg-error-container text-error text-[10px] font-bold px-2 py-0.5 rounded">LOW: 12 LEFT</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Colgate Paste</h3>
+<p class="text-sm text-gray-500 font-medium">Strong Teeth 200g</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹95</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">SNACK-02</span>
+<span class="bg-secondary-container/30 text-secondary text-[10px] font-bold px-2 py-0.5 rounded">320 IN STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Maggi Noodles</h3>
+<p class="text-sm text-gray-500 font-medium">Masala 2-Min</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹20</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- Product Card 7 (Out of Stock) -->
+<div class="bg-surface-container-lowest opacity-60 grayscale p-5 rounded-DEFAULT ghost-border flex flex-col h-[220px] relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center bg-white/40 backdrop-blur-[2px] z-10">
+<span class="bg-primary text-white text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Out of Stock</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">ESSN-001</span>
+<span class="text-error text-[10px] font-bold">0 STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Tata Salt</h3>
+<p class="text-sm text-gray-500 font-medium">Vacuum evaporated</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹28</span>
+</div>
+</div>
+<!-- Product Card 8 (Out of Stock) -->
+<div class="bg-surface-container-lowest opacity-60 grayscale p-5 rounded-DEFAULT ghost-border flex flex-col h-[220px] relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center bg-white/40 backdrop-blur-[2px] z-10">
+<span class="bg-primary text-white text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest">Out of Stock</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">CLN-09</span>
+<span class="text-error text-[10px] font-bold">0 STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Surf Excel</h3>
+<p class="text-sm text-gray-500 font-medium">Easy Wash 1kg</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹265</span>
+</div>
+</div>
+<!-- Product Card 9 -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT ghost-border hover:bg-surface-container-high transition-all group flex flex-col h-[220px]">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">DAIRY-12</span>
+<span class="bg-secondary-container/30 text-secondary text-[10px] font-bold px-2 py-0.5 rounded">55 IN STOCK</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-black text-primary leading-tight mb-1">Britannia Bread</h3>
+<p class="text-sm text-gray-500 font-medium">Whole Wheat Large</p>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-2xl font-black tracking-tighter">₹40</span>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Cart (30%) -->
+<aside class="w-full lg:w-[30%] bg-surface-container-lowest h-auto lg:h-full border-l border-gray-200/20 flex flex-col shadow-2xl z-20">
+<div class="p-8 border-b border-gray-100">
+<div class="flex justify-between items-center mb-1">
+<h2 class="text-2xl font-black tracking-tight">Current Sale</h2>
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors">more_vert</button>
+</div>
+<button class="text-primary text-xs font-bold flex items-center gap-2 mt-2 group">
+<span class="material-symbols-outlined text-sm group-hover:rotate-90 transition-transform">person_add</span>
+                    Add customer (optional)
+                </button>
+</div>
+<div class="flex-1 overflow-y-auto px-8 py-6 space-y-6">
+<!-- Cart Item 1 -->
+<div class="flex items-start justify-between">
+<div class="flex-1">
+<h4 class="font-bold text-sm text-primary">Premium Rice</h4>
+<p class="text-[10px] text-gray-400 font-medium">₹75 / unit</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-surface rounded-full px-2 py-1 ghost-border scale-90">
+<button class="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded-full transition-colors text-xs">−</button>
+<span class="text-xs font-bold w-4 text-center">2</span>
+<button class="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded-full transition-colors text-xs">+</button>
+</div>
+<div class="text-right">
+<p class="font-black text-sm">₹150</p>
+<button class="material-symbols-outlined text-gray-300 hover:text-error text-lg transition-colors">delete</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex items-start justify-between">
+<div class="flex-1">
+<h4 class="font-bold text-sm text-primary">Amul Butter</h4>
+<p class="text-[10px] text-gray-400 font-medium">₹265 / unit</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-surface rounded-full px-2 py-1 ghost-border scale-90">
+<button class="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded-full transition-colors text-xs">−</button>
+<span class="text-xs font-bold w-4 text-center">1</span>
+<button class="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded-full transition-colors text-xs">+</button>
+</div>
+<div class="text-right">
+<p class="font-black text-sm">₹265</p>
+<button class="material-symbols-outlined text-gray-300 hover:text-error text-lg transition-colors">delete</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div class="flex items-start justify-between">
+<div class="flex-1">
+<h4 class="font-bold text-sm text-primary">Maggi Noodles</h4>
+<p class="text-[10px] text-gray-400 font-medium">₹20 / unit</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-surface rounded-full px-2 py-1 ghost-border scale-90">
+<button class="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded-full transition-colors text-xs">−</button>
+<span class="text-xs font-bold w-4 text-center">3</span>
+<button class="w-6 h-6 flex items-center justify-center hover:bg-gray-200 rounded-full transition-colors text-xs">+</button>
+</div>
+<div class="text-right">
+<p class="font-black text-sm">₹60</p>
+<button class="material-symbols-outlined text-gray-300 hover:text-error text-lg transition-colors">delete</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Footer (Calculations & Payment) -->
+<div class="bg-surface p-8 space-y-6">
+<div class="space-y-2 border-b border-gray-200/50 pb-6">
+<div class="flex justify-between text-xs font-medium text-gray-500">
+<span>Subtotal</span>
+<span class="text-primary font-bold">₹475</span>
+</div>
+<div class="flex justify-between text-xs font-medium text-gray-500">
+<span class="flex items-center gap-1">Discount <button class="material-symbols-outlined text-[14px]">edit</button></span>
+<span class="text-error font-bold">-₹25</span>
+</div>
+<div class="flex justify-between text-xs font-medium text-gray-500">
+<span>Tax (18%)</span>
+<span class="text-primary font-bold">₹81</span>
+</div>
+<div class="flex justify-between pt-2">
+<span class="text-lg font-black tracking-tight">Total</span>
+<span class="text-2xl font-black tracking-tighter">₹531</span>
+</div>
+</div>
+<!-- Payment Methods -->
+<div class="grid grid-cols-3 gap-2">
+<button class="flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-primary text-white shadow-lg transition-transform scale-100">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">Cash</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-white ghost-border text-gray-400 hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined mb-1">credit_card</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">Card</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-DEFAULT bg-white ghost-border text-gray-400 hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined mb-1">phone_iphone</span>
+<span class="text-[10px] font-black uppercase tracking-tighter">UPI</span>
+</button>
+</div>
+<!-- Tender Calculation -->
+<div class="flex gap-4 items-center bg-white p-3 rounded-DEFAULT ghost-border">
+<div class="flex-1">
+<p class="text-[8px] uppercase tracking-widest text-gray-400 font-bold mb-1">Cash Tendered</p>
+<input class="w-full text-xl font-black bg-transparent border-none p-0 focus:ring-0" type="text" value="₹600"/>
+</div>
+<div class="h-10 w-[1px] bg-gray-100"></div>
+<div class="text-right">
+<p class="text-[8px] uppercase tracking-widest text-gray-400 font-bold mb-1">Change</p>
+<p class="text-xl font-black text-secondary">₹69</p>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full h-[52px] bg-primary text-white rounded-full font-black text-lg shadow-2xl hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-3">
+<span>Charge ₹531</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="text-center">
+<button class="text-gray-400 hover:text-primary text-xs font-bold uppercase tracking-widest transition-colors">Save as Draft</button>
+</div>
+</div>
+</div>
+</aside>
+</main>
+    <script src="static-actions.js"></script>
+</body></html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#c0c6db",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "background": "#f8f9fb",
+                    "surface-container": "#edeef0",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "on-tertiary": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#575e70",
+                    "primary-container": "#343b4c",
+                    "on-primary": "#dce2f7",
+                    "surface-bright": "#f8f9fb",
+                    "surface": "#f8f9fb",
+                    "on-surface-variant": "#474747",
+                    "primary-fixed": "#575e70",
+                    "outline": "#777777",
+                    "tertiary": "#3b3b3b",
+                    "secondary-fixed-dim": "#ababab",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f3f4f6",
+                    "on-secondary-container": "#1b1b1b",
+                    "on-surface": "#191c1e",
+                    "tertiary-fixed": "#5e5e5e",
+                    "on-primary-fixed-variant": "#dce2f7",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed-dim": "#474747",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "primary-fixed-dim": "#404758",
+                    "surface-variant": "#e1e2e4",
+                    "secondary-container": "#d4d4d4",
+                    "tertiary-container": "#747474",
+                    "secondary": "#5e5e5e",
+                    "on-tertiary-container": "#ffffff",
+                    "on-primary-container": "#ffffff",
+                    "on-error-container": "#410002",
+                    "surface-container-highest": "#e1e2e4",
+                    "surface-container-high": "#e7e8ea",
+                    "outline-variant": "#c6c6c6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#d9dadc",
+                    "secondary-fixed": "#c6c6c6",
+                    "on-primary-fixed": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e1e2e4; border-radius: 10px; }
+        .ghost-border { border: 1px solid rgba(198, 198, 198, 0.2); }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full flex-col py-8 bg-[#f3f4f6] dark:bg-gray-900 w-64 z-50">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<h2 class="text-lg font-black tracking-tighter text-black dark:text-white leading-tight">Bespoke Ledger</h2>
+<p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">Premium Logistics</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-gray-600 dark:text-gray-400 px-6 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all mx-4" href="Inventory_Dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="text-gray-600 dark:text-gray-400 px-6 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all mx-4" href="Products_List.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-wide">Inventory</span>
+</a>
+<a class="bg-black text-white dark:bg-white dark:text-black rounded-full px-6 py-2 flex items-center gap-3 mx-4 active:scale-95 transition-transform" href="Business_Reports.html">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-wide">Reports</span>
+</a>
+<a class="text-gray-600 dark:text-gray-400 px-6 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all mx-4" href="Purchase_Orders.html">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-wide">Orders</span>
+</a>
+<a class="text-gray-600 dark:text-gray-400 px-6 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all mx-4" href="Settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-wide">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full bg-primary-container text-white rounded-full py-4 font-bold text-sm mb-8 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Entry
+            </button>
+<a class="text-gray-600 dark:text-gray-400 px-6 py-2 flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-all" href="Inventory-Management-System-Node-Express-MongoDB-Guide.md">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-['Manrope'] font-medium text-sm tracking-wide">Help Center</span>
+</a>
+</div>
+</aside>
+<main class="ml-0 lg:ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-4 lg:px-8 py-4 bg-[#f8f9fb] dark:bg-gray-950 sticky top-0 z-40">
+<div class="flex items-center gap-2 text-gray-500 font-medium text-sm">
+<span>Analytics</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-black dark:text-white font-bold">Reports</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="px-6 py-2 border-[1.75px] border-black rounded-full font-bold text-sm hover:bg-black hover:text-white transition-all">
+                    Export All
+                </button>
+<div class="relative">
+<span class="material-symbols-outlined text-gray-600 cursor-pointer" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</div>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant/20" data-alt="professional male portrait with clean lighting and minimal background for user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1HQPBoEfQWbrXBO8UqY59jNaBirUXatfOqNJVS4uxuKFDcbwNGQ7O1T0dQ_FMsmnXRFo66SNTya9Nl5lzwAbry-FMIvHzGl8Y1k0NsJXzDduJk67oYvPkObExlWfsyz_qoW_JiUh49VUYprb8paVa7zaoJC8YGqmVsnsoV3LRW07TFA4aFPEKFkPCgQviEwCq0mjo5egtptGQuHeD_ddSREUCeoBYC91slmKjTqUHhb0Kkhmoihsowt3RqupO_Lsh17fFDKOkiT5C"/>
+</div>
+</header>
+<div class="px-4 sm:px-6 lg:px-8 pb-12">
+<!-- Header Section -->
+<div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-end mt-8 mb-10">
+<div>
+<h1 class="text-4xl font-headline font-extrabold tracking-tight text-black mb-1">Reports</h1>
+<p class="text-on-surface-variant font-medium">Analyze your business performance</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 bg-surface-container-lowest ghost-border px-4 py-2.5 rounded-full cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-gray-500 text-lg">calendar_today</span>
+<span class="text-sm font-semibold">Mar 01 – Mar 31, 2025</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest ghost-border px-4 py-2.5 rounded-full cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="text-sm font-semibold">Last 30D</span>
+<span class="material-symbols-outlined text-gray-500 text-lg">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Report Tabs -->
+<div class="flex flex-wrap gap-2 mb-10">
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-black/5">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                    Sales
+                </button>
+<button class="flex items-center gap-2 bg-surface-container-low text-gray-600 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+                    Inventory
+                </button>
+<button class="flex items-center gap-2 bg-surface-container-low text-gray-600 px-6 py-2.5 rounded-full font-bold text-sm hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">payments</span>
+                    Profit &amp; Margin
+                </button>
+</div>
+<!-- KPI Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-surface-container-lowest ghost-border p-6 rounded-DEFAULT transition-all hover:bg-surface-container-high group">
+<div class="flex justify-between items-start mb-4">
+<p class="text-sm text-gray-500 font-bold uppercase tracking-wider">Total Revenue</p>
+<span class="text-xs font-bold text-emerald-600 flex items-center bg-emerald-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">arrow_upward</span> 12.5%
+                        </span>
+</div>
+<h3 class="text-3xl font-headline font-extrabold tracking-tight">₹3,24,800</h3>
+</div>
+<div class="bg-surface-container-lowest ghost-border p-6 rounded-DEFAULT transition-all hover:bg-surface-container-high group">
+<div class="flex justify-between items-start mb-4">
+<p class="text-sm text-gray-500 font-bold uppercase tracking-wider">Total Transactions</p>
+<span class="text-xs font-bold text-emerald-600 flex items-center bg-emerald-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">arrow_upward</span> 8.2%
+                        </span>
+</div>
+<h3 class="text-3xl font-headline font-extrabold tracking-tight">847</h3>
+</div>
+<div class="bg-surface-container-lowest ghost-border p-6 rounded-DEFAULT transition-all hover:bg-surface-container-high group">
+<div class="flex justify-between items-start mb-4">
+<p class="text-sm text-gray-500 font-bold uppercase tracking-wider">Avg. Order Value</p>
+<span class="text-xs font-bold text-emerald-600 flex items-center bg-emerald-50 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">arrow_upward</span> 3.8%
+                        </span>
+</div>
+<h3 class="text-3xl font-headline font-extrabold tracking-tight">₹383</h3>
+</div>
+</div>
+<!-- Main Chart Area -->
+<div class="bg-surface-container-lowest ghost-border rounded-DEFAULT p-8 mb-8">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h4 class="text-lg font-headline font-bold text-black">Revenue Trend</h4>
+<p class="text-sm text-gray-400 font-medium">Daily performance overview</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-full">
+<button class="px-4 py-1.5 text-xs font-bold rounded-full bg-white text-black shadow-sm transition-all">Daily</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-full text-gray-500 hover:text-black transition-all">Weekly</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-full text-gray-500 hover:text-black transition-all">Monthly</button>
+</div>
+</div>
+<div class="relative h-[300px] w-full flex items-end justify-between gap-2 px-2">
+<!-- Stylized SVG area chart visualization -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#000000" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#000000" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,250 Q100,220 200,240 T400,150 T600,180 T800,100 T1000,120 L1000,300 L0,300 Z" fill="url(#chartGradient)"></path>
+<path d="M0,250 Q100,220 200,240 T400,150 T600,180 T800,100 T1000,120" fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<!-- Floating Data Points/Grid labels layer -->
+<div class="absolute bottom-0 left-0 w-full flex justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest pt-4 translate-y-6 px-2">
+<span>Mar 01</span>
+<span>Mar 07</span>
+<span>Mar 14</span>
+<span>Mar 21</span>
+<span>Mar 28</span>
+<span>Mar 31</span>
+</div>
+</div>
+</div>
+<!-- Secondary Insights Row -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-8 items-stretch">
+<!-- Sales by Category (60%) -->
+<div class="lg:col-span-3 bg-surface-container-lowest ghost-border rounded-DEFAULT p-8">
+<h4 class="text-lg font-headline font-bold text-black mb-8">Sales by Category</h4>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Grains</span>
+<span>35%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-black rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Dairy</span>
+<span>22%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-gray-600 rounded-full" style="width: 22%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Snacks</span>
+<span>18%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-gray-400 rounded-full" style="width: 18%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Oils</span>
+<span>14%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-gray-300 rounded-full" style="width: 14%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold">
+<span>Other</span>
+<span>11%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-gray-200 rounded-full" style="width: 11%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Selling (40%) -->
+<div class="lg:col-span-2 bg-surface-container-lowest ghost-border rounded-DEFAULT p-8">
+<h4 class="text-lg font-headline font-bold text-black mb-6">Top Selling Products</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group">
+<div class="w-8 h-8 flex items-center justify-center font-bold text-sm bg-surface-container-low rounded-full">1</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Whole Wheat Flour (5kg)</p>
+<p class="text-xs text-gray-400">Inventory: 240 units</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">₹42,500</p>
+<p class="text-[10px] text-gray-500 font-medium">85 Sold</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-8 h-8 flex items-center justify-center font-bold text-sm bg-surface-container-low rounded-full">2</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Organic Sunflower Oil (1L)</p>
+<p class="text-xs text-gray-400">Inventory: 112 units</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">₹38,200</p>
+<p class="text-[10px] text-gray-500 font-medium">72 Sold</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-8 h-8 flex items-center justify-center font-bold text-sm bg-surface-container-low rounded-full">3</div>
+<div class="flex-1">
+<p class="text-sm font-bold">A2 Cow Milk (500ml)</p>
+<p class="text-xs text-gray-400">Inventory: 45 units</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">₹31,050</p>
+<p class="text-[10px] text-gray-500 font-medium">150 Sold</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-8 h-8 flex items-center justify-center font-bold text-sm bg-surface-container-low rounded-full">4</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Basmati Rice (Classic)</p>
+<p class="text-xs text-gray-400">Inventory: 88 units</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold">₹28,400</p>
+<p class="text-[10px] text-gray-500 font-medium">45 Sold</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 text-xs font-bold text-gray-500 hover:text-black border-t border-gray-100 flex items-center justify-center gap-2">
+                        View Detailed List <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Detailed Sales Table -->
+<div class="bg-surface-container-lowest ghost-border rounded-DEFAULT overflow-hidden">
+<div class="p-8 flex justify-between items-center bg-white border-b border-gray-50">
+<div>
+<h4 class="text-lg font-headline font-bold text-black">Detailed Sales Transactions</h4>
+<p class="text-sm text-gray-400 font-medium">Live transaction history</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low rounded-full border-none text-sm w-64 focus:ring-1 focus:ring-black" placeholder="Search transaction ID, customer, or amount..." type="text"/>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full font-bold text-sm hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export CSV
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-[11px] font-bold uppercase tracking-widest text-gray-500">
+<th class="px-8 py-4">Invoice #</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4 text-center">Items</th>
+<th class="px-6 py-4 text-right">Subtotal</th>
+<th class="px-6 py-4 text-right">Tax</th>
+<th class="px-6 py-4 text-right">Total</th>
+<th class="px-6 py-4">Method</th>
+<th class="px-8 py-4 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-5 font-bold text-sm">#INV-9281</td>
+<td class="px-6 py-5 text-sm text-gray-500 font-medium">Mar 31, 2025</td>
+<td class="px-6 py-5 text-sm font-bold">Rajesh Malhotra</td>
+<td class="px-6 py-5 text-sm text-center text-gray-500">08</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹2,840</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹142</td>
+<td class="px-6 py-5 text-sm text-right font-bold">₹2,982</td>
+<td class="px-6 py-5 text-xs font-bold text-gray-400">UPI</td>
+<td class="px-8 py-5 text-right">
+<span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Paid</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-5 font-bold text-sm">#INV-9280</td>
+<td class="px-6 py-5 text-sm text-gray-500 font-medium">Mar 31, 2025</td>
+<td class="px-6 py-5 text-sm font-bold">Anita Gupta</td>
+<td class="px-6 py-5 text-sm text-center text-gray-500">03</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹1,200</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹60</td>
+<td class="px-6 py-5 text-sm text-right font-bold">₹1,260</td>
+<td class="px-6 py-5 text-xs font-bold text-gray-400">CASH</td>
+<td class="px-8 py-5 text-right">
+<span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Pending</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-5 font-bold text-sm">#INV-9279</td>
+<td class="px-6 py-5 text-sm text-gray-500 font-medium">Mar 30, 2025</td>
+<td class="px-6 py-5 text-sm font-bold">Vikram Sethi</td>
+<td class="px-6 py-5 text-sm text-center text-gray-500">12</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹8,450</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹422</td>
+<td class="px-6 py-5 text-sm text-right font-bold">₹8,872</td>
+<td class="px-6 py-5 text-xs font-bold text-gray-400">CARD</td>
+<td class="px-8 py-5 text-right">
+<span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Paid</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-8 py-5 font-bold text-sm">#INV-9278</td>
+<td class="px-6 py-5 text-sm text-gray-500 font-medium">Mar 30, 2025</td>
+<td class="px-6 py-5 text-sm font-bold">Sunita Verma</td>
+<td class="px-6 py-5 text-sm text-center text-gray-500">02</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹450</td>
+<td class="px-6 py-5 text-sm text-right font-medium">₹22</td>
+<td class="px-6 py-5 text-sm text-right font-bold">₹472</td>
+<td class="px-6 py-5 text-xs font-bold text-gray-400">UPI</td>
+<td class="px-8 py-5 text-right">
+<span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Refunded</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-6 bg-white border-t border-gray-50 flex justify-between items-center">
+<p class="text-sm font-bold text-gray-400">Showing 1-10 of 847 transactions</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-low rounded-full hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<button class="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full font-bold text-sm">1</button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high rounded-full font-bold text-sm">2</button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high rounded-full font-bold text-sm">3</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container-low rounded-full hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+    <script src="static-actions.js"></script>
+</body></html>

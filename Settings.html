@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bespoke Ledger - Business Profile Settings</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;family=DM+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#777777",
+                      "on-tertiary-fixed-variant": "#e2e2e2",
+                      "primary-fixed-dim": "#404758",
+                      "on-tertiary-fixed": "#ffffff",
+                      "surface": "#f8f9fb",
+                      "surface-container-highest": "#e1e2e4",
+                      "surface-bright": "#f8f9fb",
+                      "secondary-container": "#d4d4d4",
+                      "inverse-on-surface": "#f0f1f3",
+                      "tertiary-container": "#747474",
+                      "secondary-fixed": "#c6c6c6",
+                      "primary-fixed": "#575e70",
+                      "on-error-container": "#410002",
+                      "on-primary-fixed": "#ffffff",
+                      "surface-variant": "#e1e2e4",
+                      "secondary": "#5e5e5e",
+                      "on-surface-variant": "#474747",
+                      "background": "#f8f9fb",
+                      "on-primary-fixed-variant": "#dce2f7",
+                      "surface-container-high": "#e7e8ea",
+                      "surface-container-low": "#f3f4f6",
+                      "on-secondary-container": "#1b1b1b",
+                      "on-primary": "#dce2f7",
+                      "surface-dim": "#d9dadc",
+                      "on-error": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "error": "#ba1a1a",
+                      "primary": "#000000",
+                      "tertiary-fixed-dim": "#474747",
+                      "surface-tint": "#575e70",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#343b4c",
+                      "secondary-fixed-dim": "#ababab",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-fixed-variant": "#3b3b3b",
+                      "tertiary": "#3b3b3b",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#ffffff",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "on-primary-container": "#ffffff",
+                      "surface-container": "#edeef0",
+                      "outline-variant": "#c6c6c6",
+                      "on-tertiary": "#e2e2e2",
+                      "tertiary-fixed": "#5e5e5e",
+                      "on-background": "#191c1e",
+                      "inverse-primary": "#c0c6db",
+                      "on-secondary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"],
+                      "mono": ["DM Mono"]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ghost-border {
+            border: 1px solid rgba(198, 198, 198, 0.2);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none !important;
+            border-color: #000000 !important;
+            box-shadow: none !important;
+        }
+        .input-underline {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1.75px solid #c6c6c6;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar Mapping -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 shadow-[0_40px_40px_-15px_rgba(0,0,0,0.04)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-gray-900 tracking-tighter font-headline">Bespoke Inventory</span>
+<div class="hidden md:flex gap-6">
+<a class="font-headline font-bold text-lg text-gray-900 border-b-2 border-black pb-1" href="Settings.html">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-gray-900">notifications</span>
+</button>
+<img alt="User profile avatar" class="w-10 h-10 rounded-full object-cover ghost-border" data-alt="Close-up portrait of a professional man in a minimalist studio setting with soft neutral lighting and clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPcfxiwnaKQjWEmZBGFTwWUjDn7jRVAxI68zb4F3ESponLyHY3uU0v-TAx4903nfEWjfce9INehqsG53X0vy-cQqDF2AYKiKqBTNcrrhlsWDkba1RaneRxOyN_gkKESYckjZB9ZSScCYMNM7Bgyq-ZFpWK0zk4tu-Ku0D30ajGWRpjkwd1GhHwSpxIQdGJncqS9NsCY-tFiQKA1-jZ2OTGLQ0Uo00wrKqSKUPd067Qz6AGupq6Dp9g2BWe08Skyhfx4Pvt1lT3M97p"/>
+</div>
+</nav>
+<!-- App Shell Layout -->
+<div class="pt-24 pb-32 max-w-7xl mx-auto px-8 flex gap-12">
+<!-- Left SideNavBar (Settings Navigation) -->
+<aside class="w-64 sticky top-24 h-fit flex flex-col gap-8">
+<!-- General Section -->
+<div class="space-y-4">
+<h3 class="font-headline text-[11px] uppercase tracking-widest text-on-surface-variant font-black">General</h3>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 bg-black text-white rounded-full px-4 py-2 text-sm font-medium transition-all" href="Settings.html#business-profile">
+<span class="material-symbols-outlined text-[18px]">store</span>
+                        Business Profile
+                    </a>
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#invoice-settings">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                        Tax Settings
+                    </a>
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#invoice-settings">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Invoice Settings
+                    </a>
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#business-profile">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span>
+                        Units &amp; Barcodes
+                    </a>
+</nav>
+</div>
+<!-- Access Section -->
+<div class="space-y-4">
+<h3 class="font-headline text-[11px] uppercase tracking-widest text-on-surface-variant font-black">Access</h3>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#business-profile">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                        Users &amp; Roles
+                    </a>
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#business-profile">
+<span class="material-symbols-outlined text-[18px]">key</span>
+                        Permissions
+                    </a>
+</nav>
+</div>
+<!-- Preferences Section -->
+<div class="space-y-4">
+<h3 class="font-headline text-[11px] uppercase tracking-widest text-on-surface-variant font-black">Preferences</h3>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#business-profile">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                        Notifications
+                    </a>
+<a class="flex items-center gap-3 text-gray-500 px-4 py-2 text-sm font-medium hover:bg-gray-200/50 rounded-full transition-all" href="Settings.html#business-profile">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+                        Appearance
+                    </a>
+</nav>
+</div>
+</aside>
+<!-- Right Main Panel -->
+<main class="flex-1 space-y-10">
+<header id="business-profile">
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-primary">Business Profile</h1>
+<p class="text-on-surface-variant mt-2 text-lg">Update your store information and branding.</p>
+</header>
+<!-- Main Profile Card -->
+<div class="bg-surface-container-lowest ghost-border rounded p-10 space-y-12">
+<!-- Logo Upload Section -->
+<div class="flex items-center gap-8">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden ghost-border">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant">storefront</span>
+</div>
+</div>
+<div class="space-y-2">
+<button class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">Change Logo</button>
+<p class="text-xs text-on-surface-variant">Recommended size: 512x512px. PNG or SVG.</p>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="grid grid-cols-2 gap-x-12 gap-y-8">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Shop Name*</label>
+<input class="w-full input-underline py-2 font-medium focus:border-primary transition-colors" type="text" value="Sharma General Store"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Business Type</label>
+<select class="w-full input-underline py-2 font-medium focus:border-primary transition-colors cursor-pointer">
+<option selected="">Retail</option>
+<option>Wholesale</option>
+<option>Manufacturing</option>
+</select>
+</div>
+<div class="space-y-2 col-span-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Address Line 1*</label>
+<input class="w-full input-underline py-2 font-medium" type="text" value="23, MG Road"/>
+</div>
+<div class="space-y-2 col-span-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Address Line 2</label>
+<input class="w-full input-underline py-2 font-medium" type="text" value="Near City Mall"/>
+</div>
+<div class="grid grid-cols-3 gap-6 col-span-2">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">City*</label>
+<input class="w-full input-underline py-2 font-medium" placeholder="e.g., Ahmedabad" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">State*</label>
+<input class="w-full input-underline py-2 font-medium" placeholder="e.g., Gujarat" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">PIN Code*</label>
+<input class="w-full input-underline py-2 font-medium" placeholder="e.g., 380001" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Country</label>
+<input class="w-full input-underline py-2 font-medium opacity-60" disabled="" type="text" value="India"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Phone Number*</label>
+<input class="w-full input-underline py-2 font-medium" type="text" value="+91 98765 43210"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Email</label>
+<input class="w-full input-underline py-2 font-medium" type="email" value="sharma@store.com"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">GSTIN</label>
+<div class="flex items-center gap-3">
+<input class="w-full input-underline py-2 font-mono font-medium tracking-widest uppercase" type="text" value="29ABCDE1234F1Z5"/>
+<div class="flex items-center gap-1 bg-green-50 text-green-700 px-2 py-1 rounded text-[10px] font-black uppercase tracking-tight ghost-border">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Verified
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Invoice Settings Card -->
+<div class="bg-surface-container-lowest ghost-border rounded p-10 space-y-8" id="invoice-settings">
+<header class="flex justify-between items-center">
+<div>
+<h2 class="font-headline text-xl font-bold tracking-tight">Invoice Settings</h2>
+<p class="text-on-surface-variant text-sm mt-1">Configure default parameters for your billing documents.</p>
+</div>
+<button class="text-primary border-[1.75px] border-primary px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-all ring-1 ring-primary">
+                        Save Invoice Settings
+                    </button>
+</header>
+<div class="grid grid-cols-2 gap-x-12 gap-y-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Invoice Prefix</label>
+<input class="w-full input-underline py-2 font-medium" type="text" value="INV-"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Starting Number</label>
+<input class="w-full input-underline py-2 font-medium" type="number" value="1001"/>
+</div>
+<div class="space-y-2 col-span-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Footer text</label>
+<textarea class="w-full input-underline py-2 font-medium resize-none" rows="2">Thank you for your purchase!</textarea>
+</div>
+<div class="col-span-2 flex items-center justify-between py-2">
+<div class="space-y-0.5">
+<span class="text-sm font-semibold">Show GSTIN on invoice</span>
+<p class="text-xs text-on-surface-variant">Automatically include your registered GSTIN in the header.</p>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative transition-colors">
+<div class="w-4 h-4 bg-white rounded-full absolute right-1 top-1"></div>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-100 px-8 py-4 z-50 flex justify-between items-center">
+<div class="text-sm text-on-surface-variant italic">
+            Last saved: Oct 24, 2023 at 10:45 AM
+        </div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant font-semibold text-sm hover:text-primary transition-colors">Discard changes</button>
+<button class="bg-primary text-white px-10 py-3 rounded-full font-bold shadow-2xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Save Profile
+            </button>
+</div>
+</footer>
+    <script src="static-actions.js"></script>
+</body></html>

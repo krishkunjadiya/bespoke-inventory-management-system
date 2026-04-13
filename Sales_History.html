@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales History | Bespoke Inventory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d9dadc",
+                        "surface": "#f8f9fb",
+                        "tertiary-fixed-dim": "#474747",
+                        "on-secondary-container": "#1b1b1b",
+                        "on-primary-fixed": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d4d4d4",
+                        "secondary": "#5e5e5e",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e7e8ea",
+                        "secondary-fixed": "#c6c6c6",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-primary": "#dce2f7",
+                        "secondary-fixed-dim": "#ababab",
+                        "on-tertiary-fixed": "#ffffff",
+                        "inverse-primary": "#c0c6db",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#575e70",
+                        "surface-bright": "#f8f9fb",
+                        "primary-container": "#343b4c",
+                        "on-surface-variant": "#474747",
+                        "on-secondary-fixed-variant": "#3b3b3b",
+                        "outline": "#777777",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "on-surface": "#191c1e",
+                        "tertiary": "#3b3b3b",
+                        "primary-fixed-dim": "#404758",
+                        "on-primary-container": "#ffffff",
+                        "primary": "#000000",
+                        "outline-variant": "#c6c6c6",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9fb",
+                        "surface-container-low": "#f3f4f6",
+                        "on-error-container": "#410002",
+                        "tertiary-container": "#747474",
+                        "tertiary-fixed": "#5e5e5e",
+                        "on-tertiary-fixed-variant": "#e2e2e2",
+                        "on-primary-fixed-variant": "#dce2f7",
+                        "surface-tint": "#575e70",
+                        "surface-container": "#edeef0",
+                        "surface-variant": "#e1e2e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'olsz' 24;
+            vertical-align: middle;
+        }
+        .no-shadow { box-shadow: none !important; }
+        .ghost-border { border: 1px solid rgba(198, 198, 198, 0.2); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="flex flex-col h-full py-8 bg-gray-100 dark:bg-gray-900 h-screen w-64 border-r-0 no-shadow">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-black rounded flex items-center justify-center">
+<span class="text-white text-xs font-bold">B</span>
+</div>
+<div>
+<h2 class="text-xl font-bold tracking-tight text-black dark:text-white font-headline">Bespoke</h2>
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">Inventory Management</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white px-8 py-2 font-manrope font-semibold text-sm transition-colors" href="Inventory_Dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white px-8 py-2 font-manrope font-semibold text-sm transition-colors" href="Products_List.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<div class="py-1">
+<a class="flex items-center gap-3 bg-black dark:bg-white text-white dark:text-black rounded-full mx-4 py-2 px-4 shadow-sm font-manrope font-semibold text-sm" href="Sales_History.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Sales History</span>
+</a>
+</div>
+<a class="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white px-8 py-2 font-manrope font-semibold text-sm transition-colors" href="Suppliers_Management.html">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>Suppliers</span>
+</a>
+<a class="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white px-8 py-2 font-manrope font-semibold text-sm transition-colors" href="Business_Reports.html">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="mt-auto px-8 pt-6 border-t border-gray-200/50 space-y-4">
+<a class="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black font-manrope font-semibold text-sm" href="Settings.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black font-manrope font-semibold text-sm" href="Inventory-Management-System-Node-Express-MongoDB-Guide.md">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto relative bg-surface">
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20">
+<div class="flex items-center gap-2 font-manrope font-medium text-base text-gray-400">
+<span class="hover:text-black cursor-pointer transition-colors">Sales</span>
+<span class="text-xs">/</span>
+<span class="text-black dark:text-white font-bold">Sales History</span>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-black text-white px-6 py-2 rounded-full font-headline font-bold text-sm hover:opacity-90 transition-opacity">
+                        New Sale
+                    </button>
+<div class="flex items-center gap-4 text-gray-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-black transition-colors" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-200">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man in a tailored suit with a neutral office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3wTN0nem6XHZLwrzMviTwD3mZPL4PXaXACfyB85iqX1yGA4Mrec1zwB6nGAFzrRVFJg_zVLS7LblxjWqlRirW6uqj3xH4HyLSe5JL6-1HG1bPXzgWyJ0wD1yGuHg45k86DVDSrVrLYc0nK27dShstIvA4Bcl4c_dgfiJHeykOBoHc8zckYAxTk7o_ODA1eSXMRiJYSbjH0mBx00sLT4BvAkaj5NS1XBXG4Z9EDfjxnd2zxb4kJtMhClWwHj9u9hCKKj7lZeYbb9t2"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 space-y-8 max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="text-4xl font-headline font-extrabold tracking-tight text-black">Sales History</h1>
+<p class="text-gray-500 mt-1">All completed transactions across all locations.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-full ghost-border cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-gray-500 text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-semibold">Apr 01 – Apr 05, 2025</span>
+</div>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full border-[1.75px] border-black/10 ghost-border font-headline font-bold text-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
+                            Export CSV
+                        </button>
+</div>
+</div>
+<!-- Stats Bar -->
+<div class="bg-surface-container-lowest ghost-border rounded-DEFAULT py-6 px-10 flex justify-between items-center">
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Period Revenue</p>
+<p class="text-2xl font-headline font-extrabold">₹1,24,350</p>
+</div>
+<div class="w-px h-10 bg-gray-200"></div>
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Transactions</p>
+<p class="text-2xl font-headline font-extrabold">287</p>
+</div>
+<div class="w-px h-10 bg-gray-200"></div>
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Avg. Order</p>
+<p class="text-2xl font-headline font-extrabold">₹433</p>
+</div>
+</div>
+<!-- Filters -->
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-12 pr-6 py-3 text-sm focus:ring-1 focus:ring-black/20 placeholder:text-gray-400" placeholder="Search invoice number, customer, or product..." type="text"/>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-8 py-2">
+<div class="flex items-center gap-4">
+<span class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Status</span>
+<div class="flex bg-surface-container-low p-1 rounded-full">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-white shadow-sm">All</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">Paid</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">Pending</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">Refunded</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">Voided</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Payment</span>
+<div class="flex bg-surface-container-low p-1 rounded-full">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-white shadow-sm">All</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">Cash</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">Card</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-gray-500 hover:text-black">UPI</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Card -->
+<div class="bg-surface-container-lowest ghost-border rounded-DEFAULT overflow-hidden">
+<div class="p-6 border-b border-gray-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline font-bold text-lg">Transactions</h3>
+<span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded-full">287</span>
+</div>
+<button class="text-gray-400 hover:text-black transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Invoice #</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Customer</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Date &amp; Time</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Items</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Subtotal</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500 text-right">Total</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Payment</th>
+<th class="px-6 py-4 text-[10px] uppercase tracking-widest font-bold text-gray-500">Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1087</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Aditi Sharma</span>
+<span class="text-xs text-gray-400">aditi.s@gmail.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 05, 02:30 PM</td>
+<td class="px-6 py-5 text-xs">4 items</td>
+<td class="px-6 py-5 text-xs">₹1,240</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹1,364</td>
+<td class="px-6 py-5 text-xs font-medium">UPI</td>
+<td class="px-6 py-5">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1086</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Rahul Verma</span>
+<span class="text-xs text-gray-400">r.verma@outlook.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 05, 11:15 AM</td>
+<td class="px-6 py-5 text-xs">1 item</td>
+<td class="px-6 py-5 text-xs">₹850</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹935</td>
+<td class="px-6 py-5 text-xs font-medium">Card</td>
+<td class="px-6 py-5">
+<span class="bg-amber-50 text-amber-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Pending</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1085</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Priya Gulta</span>
+<span class="text-xs text-gray-400">priya.g@indiamail.in</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 04, 06:45 PM</td>
+<td class="px-6 py-5 text-xs">12 items</td>
+<td class="px-6 py-5 text-xs">₹8,400</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹9,240</td>
+<td class="px-6 py-5 text-xs font-medium">Cash</td>
+<td class="px-6 py-5">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1084</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Kabir Das</span>
+<span class="text-xs text-gray-400">k.das@corporate.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 04, 04:20 PM</td>
+<td class="px-6 py-5 text-xs">3 items</td>
+<td class="px-6 py-5 text-xs">₹2,100</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹2,310</td>
+<td class="px-6 py-5 text-xs font-medium">Card</td>
+<td class="px-6 py-5">
+<span class="bg-gray-100 text-gray-500 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Refunded</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1083</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Sneha Rao</span>
+<span class="text-xs text-gray-400">sneha@gmail.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 04, 10:10 AM</td>
+<td class="px-6 py-5 text-xs">2 items</td>
+<td class="px-6 py-5 text-xs">₹450</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹495</td>
+<td class="px-6 py-5 text-xs font-medium">UPI</td>
+<td class="px-6 py-5">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1082</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Amit Kumar</span>
+<span class="text-xs text-gray-400">amit@kumar.in</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 03, 05:55 PM</td>
+<td class="px-6 py-5 text-xs">1 item</td>
+<td class="px-6 py-5 text-xs">₹3,200</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹3,520</td>
+<td class="px-6 py-5 text-xs font-medium">Card</td>
+<td class="px-6 py-5">
+<span class="bg-gray-50 text-gray-400 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Voided</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1081</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Vikram Singh</span>
+<span class="text-xs text-gray-400">vsingh@yahoo.co.in</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 03, 02:40 PM</td>
+<td class="px-6 py-5 text-xs">5 items</td>
+<td class="px-6 py-5 text-xs">₹1,950</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹2,145</td>
+<td class="px-6 py-5 text-xs font-medium">Cash</td>
+<td class="px-6 py-5">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1080</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Meera Nair</span>
+<span class="text-xs text-gray-400">meera.nair@me.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 02, 01:10 PM</td>
+<td class="px-6 py-5 text-xs">2 items</td>
+<td class="px-6 py-5 text-xs">₹1,100</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹1,210</td>
+<td class="px-6 py-5 text-xs font-medium">UPI</td>
+<td class="px-6 py-5">
+<span class="bg-amber-50 text-amber-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Pending</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 9 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1079</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Zoya Khan</span>
+<span class="text-xs text-gray-400">z.khan@retail.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 02, 10:05 AM</td>
+<td class="px-6 py-5 text-xs">7 items</td>
+<td class="px-6 py-5 text-xs">₹4,200</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹4,620</td>
+<td class="px-6 py-5 text-xs font-medium">Card</td>
+<td class="px-6 py-5">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<!-- Row 10 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-5 text-sm font-bold font-headline">INV-1078</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Dev Patel</span>
+<span class="text-xs text-gray-400">dev.l@outlook.com</span>
+</div>
+</td>
+<td class="px-6 py-5 text-xs text-gray-500">Apr 01, 03:50 PM</td>
+<td class="px-6 py-5 text-xs">1 item</td>
+<td class="px-6 py-5 text-xs">₹9,900</td>
+<td class="px-6 py-5 text-sm font-bold font-headline text-right">₹10,890</td>
+<td class="px-6 py-5 text-xs font-medium">UPI</td>
+<td class="px-6 py-5">
+<span class="bg-green-50 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">Paid</span>
+</td>
+<td class="px-6 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-gray-400 hover:text-black" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-low/30 border-t border-gray-100 flex items-center justify-between">
+<span class="text-xs text-gray-500 font-medium">Showing 1-10 of 287 transactions</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-black text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-xs font-bold text-gray-500 hover:bg-white transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-xs font-bold text-gray-500 hover:bg-white transition-colors">3</button>
+<span class="text-gray-300">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-xs font-bold text-gray-500 hover:bg-white transition-colors">29</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 text-gray-400 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+    <script src="static-actions.js"></script>
+</body></html>

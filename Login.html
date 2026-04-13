@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StockWise | Premium Inventory Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#1b1b1b",
+                    "tertiary-fixed-dim": "#474747",
+                    "primary": "#000000",
+                    "surface-container": "#edeef0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#e2e2e2",
+                    "on-primary": "#dce2f7",
+                    "inverse-primary": "#c0c6db",
+                    "surface-container-low": "#f3f4f6",
+                    "on-tertiary-container": "#ffffff",
+                    "surface-tint": "#575e70",
+                    "secondary": "#5e5e5e",
+                    "primary-fixed": "#575e70",
+                    "on-primary-container": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "secondary-fixed": "#c6c6c6",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9fb",
+                    "surface": "#f8f9fb",
+                    "on-surface-variant": "#474747",
+                    "primary-fixed-dim": "#404758",
+                    "surface-variant": "#e1e2e4",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "tertiary-fixed": "#5e5e5e",
+                    "secondary-container": "#d4d4d4",
+                    "on-background": "#191c1e",
+                    "outline-variant": "#c6c6c6",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "inverse-on-surface": "#f0f1f3",
+                    "tertiary-container": "#747474",
+                    "on-error-container": "#410002",
+                    "background": "#f8f9fb",
+                    "primary-container": "#343b4c",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#ffffff",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "surface-container-high": "#e7e8ea",
+                    "outline": "#777777",
+                    "on-tertiary-fixed": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e2e4",
+                    "on-primary-fixed-variant": "#dce2f7",
+                    "tertiary": "#3b3b3b",
+                    "secondary-fixed-dim": "#ababab",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d9dadc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+        .ghost-border {
+            border: 1px solid rgba(198, 198, 198, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background selection:bg-on-primary-container selection:text-primary">
+<main class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+<!-- 60% Left Side: Branding & Editorial Content -->
+<section class="editorial-gradient w-full md:w-[60%] min-h-[409px] md:min-h-screen p-12 md:p-20 flex flex-col justify-between relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute bottom-0 left-0 w-full h-1/2 opacity-20 pointer-events-none">
+<div class="absolute inset-0" data-alt="Abstract monochrome geometric pattern with sharp angles and architectural lines in shades of deep charcoal and gray." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJ3hyzxhH4FrpSnmrzNEoGkTgcCyvrx0buLHbohK_q_63ckd-yPb1O4j1KWbrNPfqjNqjNvDw7wTwaa7zssZ3B3Jf5roXFDYk6eKMLRHduZBJjUluRTnngQt0hZ9-YNOsbt5UmEs18_2P32qZGcReMgivuFCb3WhJA3a9UOxXrQp7nRg_J7n20hJun1JFSFG7TUBsBzRqsax3ZFyI5AO3g65kKDgSUjmDX2P692C-h7nHbAHi3nsbdS_9o0uqyOSeK-FvqbFc2qn8p'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent"></div>
+</div>
+<!-- Logo -->
+<div class="z-10 flex items-center gap-3">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-headline font-black text-2xl tracking-tighter text-white">StockWise</span>
+</div>
+<!-- Editorial Hook -->
+<div class="z-10 max-w-xl">
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl text-white tracking-tight leading-[1.1] mb-6">
+                    Manage Smarter. Sell Faster.
+                </h1>
+<p class="text-white/70 text-xl font-light leading-relaxed mb-12">
+                    Your complete inventory, sales, and purchasing hub for modern retail.
+                </p>
+<!-- Features -->
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white" data-icon="bolt">bolt</span>
+</div>
+<span class="text-white font-medium tracking-wide">Real-time stock tracking</span>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white" data-icon="analytics">analytics</span>
+</div>
+<span class="text-white font-medium tracking-wide">Smart sales analytics</span>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white" data-icon="notifications_active">notifications_active</span>
+</div>
+<span class="text-white font-medium tracking-wide">Low stock alerts</span>
+</div>
+</div>
+</div>
+<!-- Empty space for footer alignment -->
+<div class="z-10 text-white/30 text-xs uppercase tracking-[0.2em]">
+                © 2024 StockWise Intelligence
+            </div>
+</section>
+<!-- 40% Right Side: Authentication Canvas -->
+<section class="w-full md:w-[40%] bg-surface flex items-center justify-center p-8 md:p-12 relative">
+<div class="w-full max-w-md">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest ghost-border p-10 rounded-DEFAULT shadow-sm">
+<div class="mb-10 text-center md:text-left">
+<h2 class="font-headline font-bold text-3xl text-primary tracking-tight mb-2">Welcome back</h2>
+<p class="text-secondary text-sm font-light">Sign in to your account to continue</p>
+</div>
+<form class="space-y-6" onsubmit="return false;">
+<!-- Email Input -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant" for="email">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b-[1.75px] border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 placeholder:text-outline transition-all duration-300 outline-none" id="email" placeholder="manager@yourstore.com" type="email"/>
+</div>
+<!-- Password Input -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-end">
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface-variant" for="password">Password</label>
+<a class="text-xs text-secondary hover:text-primary transition-colors font-medium" href="mailto:support@yourstore.com?subject=Password%20Reset%20Request">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b-[1.75px] border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 placeholder:text-outline transition-all duration-300 outline-none pr-10" id="password" placeholder="Type your account password" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="w-full h-[48px] bg-primary text-on-secondary rounded-full font-headline font-bold text-sm tracking-tight hover:opacity-90 active:scale-[0.98] transition-all duration-200" type="submit">
+                            Sign In
+                        </button>
+<!-- Divider -->
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-outline-variant/30"></div>
+<span class="flex-shrink mx-4 text-xs font-medium text-outline uppercase tracking-widest">— or —</span>
+<div class="flex-grow border-t border-outline-variant/30"></div>
+</div>
+<!-- Google OAuth -->
+<button class="w-full h-[48px] bg-transparent border-[1.75px] border-outline-variant rounded-full font-headline font-bold text-sm tracking-tight hover:bg-surface-container-low active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                            Continue with Google
+                        </button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-sm text-secondary">
+                            Don't have an account? <a class="text-primary font-bold hover:underline underline-offset-4 decoration-2" href="mailto:support@yourstore.com?subject=Account%20Access%20Request">Request access</a>
+</p>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-12 flex justify-center gap-6">
+<a class="text-[10px] font-label uppercase tracking-widest text-outline hover:text-primary transition-colors" href="Privacy_Policy.html">Privacy Policy</a>
+<a class="text-[10px] font-label uppercase tracking-widest text-outline hover:text-primary transition-colors" href="Terms_of_Service.html">Terms of Service</a>
+<a class="text-[10px] font-label uppercase tracking-widest text-outline hover:text-primary transition-colors" href="mailto:support@yourstore.com?subject=Support%20Inquiry">Contact</a>
+</div>
+</div>
+</section>
+</main>
+    <script src="static-actions.js"></script>
+</body></html>
